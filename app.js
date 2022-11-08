@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 const sessionConfig = require('./config/sessionConfig');
 const userSession = require('./middlewares/userSession');
 
@@ -14,13 +15,11 @@ const loginRouter = require('./routes/auth/loginRouter');
 const registrationRouter = require('./routes/auth/registrationRouter');
 
 const mainRouter = require('./routers/mainRouter');
-
-const morgan = require('morgan');
+const wordsRouter = require('./routers/wordsRouter');
 
 const app = express();
 
 const PORT = process.env.PORT ?? 3000;
-
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -33,6 +32,6 @@ app.use(userSession);
 app.use('/', mainRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
-
+app.use('/words', wordsRouter);
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });

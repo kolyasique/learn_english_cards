@@ -6,7 +6,7 @@ module.exports = function Header() {
     <div id="header-all">
       <img src='/img/logo.png' id="logo"></img>
       <div id="header-menu">
-        <div><a href="/main" id="authorizationbutton">Главная</a></div>
+        <div><a href="/" id="authorizationbutton">Главная</a></div>
         <div id="vert-line-menu1"> </div>
         <div><a href="/"> Добавить карточку</a></div>
         <div id="vert-line-menu2"> </div>

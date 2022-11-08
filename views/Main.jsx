@@ -9,7 +9,7 @@ module.exports = function Main({ arrThemes }) {
         {arrThemes.length
           ? arrThemes.map((theme) => (
             <div className="themeCard">
-              <a href={`/${theme.id}`}>{theme.title}</a>
+              <a href={`/words/${theme.id}`}>{theme.title}</a>
             </div>
           ))
           : <h3>Тем не существует!</h3>}
