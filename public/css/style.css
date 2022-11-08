@@ -265,6 +265,7 @@
     display: none;
   }
 
+
   /* Themes Cards*/
   
   .themesContainer{
@@ -322,3 +323,30 @@
     margin-top: 0;
     margin-bottom: 10px;
   } 
+
+.wordsPage {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  margin-right: 20px;
+  border: solid;
+  border-radius: 5%;
+  border-color: grey;
+  position: relative;
+  width: 200px; height: 200px;
+  transition: 1s;
+  transform-style: preserve-3d;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardFace {
+  font-size: 30px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.cardFace.back {
+  transform: rotateY(180deg);
+}
+
