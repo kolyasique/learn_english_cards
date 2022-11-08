@@ -7,34 +7,36 @@ const Layout = require('../Layout');
 module.exports = function Login() {
   return (
     <Layout>
-    <div className="central-form-div">
-     
-      <form action="/login" method="POST" id="login-form">
-        <h1>LOGIN</h1>
-        <div className="title">privet english</div>
-        <div className="subtitle">London is the capital of great britain</div>
+      <div className="central-form-div">
 
-        <div className="input-container ic1">
-          <input id="firstname" className="input" name="login" type="text" placeholder=" " />
+        <form action="/login" method="POST" id="login-form">
+          <h1>Войти</h1>
+          <div className="title">privet english</div>
+          <div className="subtitle">London is the capital of great britain</div>
+
+          <div className="input-container ic1">
+            <input id="firstname" className="input" name="login" type="text" placeholder=" " />
+            <div className="cut"></div>
+            <label htmlFor="firstname" className="placeholder">Логин</label>
+          </div>
+
+          <div className="input-container ic2">
+            <input id="lastname" className="input" name="password" type="password" placeholder=" " />
+            <div className="cut"></div>
+            <label htmlFor="lastname" className="placeholder">Пароль</label>
+          </div>
+
+            <div id='login-submit-btn'>
+          <button className="submit" type="SUBMIT"> Апдейт </button>
+            </div>
           <div className="cut"></div>
-          <label htmlFor="firstname" className="placeholder">Логин</label>
-        </div>
-
-        <div className="input-container ic2">
-          <input id="lastname" className="input" name="password" type="password" placeholder=" " />
-          <div className="cut"></div>
-          <label htmlFor="lastname" className="placeholder">Пароль</label>
-        </div>
-
-
-        <button className="submit" type="SUBMIT"> Апдейт </button>
-      </form>
-    </div>
+          <div id="login-status"></div>
+        </form>
+      </div>
+      <script type="module" src="node_modules/spin.js/spin.js"></script>
     </Layout>
   );
 };
-
-
 
 // /* eslint-disable react/button-has-type */
 // /* eslint-disable react/void-dom-elements-no-children */

@@ -1,24 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
   }
 
+  /* HEADER */
   #header-all{
-    background: #15c39b;
+    background: #4f8579;
     width:100%;
     color: azure;
     padding: 0;
     margin: 0;
-    display: block;
-    height: 100px;
+    display: flex;
+    height: 120px;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content:center;
-   
+    background-color: rgba(23, 67, 24, 0.9); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    padding: 10px;
   }
 
+  #logo{
+    width: auto;
+    height: 100px;
+  }
   /* LOG/REG DIVS */
 
+  h1{
+    color: #eee;
+  }
 .central-form-div{
     width: 100%;
     height: auto;
@@ -28,15 +42,29 @@
     justify-content: center;
 }
 
-  /* LOGIN FORM */
+  /* LOGIN - REG FORM */
+  #registration-form{
+    width: 400px;
+    height: 500px;
+    padding: 15px;
+    margin: 50px;
+    border-radius: 0px;
+    background-color: #15172b;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+
   #login-form{
     width: 400px;
     height: 500px;
     padding: 15px;
     margin: 50px;
+    border-radius: 0px;
     background-color: #15172b;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
 }
 .title {
     color: #eee;
@@ -157,4 +185,76 @@
   }
   a:hover {
     text-decoration: underline;
+  }
+  
+  /* SPINNER */
+
+  .preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+  }
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+  }
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
   }

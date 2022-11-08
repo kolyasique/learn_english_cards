@@ -45,6 +45,7 @@
     "react-dom": "^18.2.0",
     "sequelize": "^6.25.5",
     "sequelize-cli": "^6.5.2",
-    "session-file-store": "^1.5.0"
+    "session-file-store": "^1.5.0",
+    "spin.js": "^4.1.1"
   }
 }

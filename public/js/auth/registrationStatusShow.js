@@ -12,16 +12,21 @@ document.querySelector('#registration-form').addEventListener('submit', async (e
 
   // получаем с сервера
   const { status } = await checkRegistration.json();
-  if (status === 'user created!') {
-    document.querySelector('#incorrect-registration-data').innerHTML = "<p>Ты зарегистрирован, нужно войти</p> <a href='/login'> Сюда </a>";
-  }
-  if (status === 'user already exists') {
-    document.querySelector('#incorrect-registration-data').innerHTML = "<p>Такой пользователь существует!</p> <a href='/login'> Сюда </a> ";
-  }
-  if (status === 'check password') {
-    document.querySelector('#incorrect-registration-data').innerHTML = '<p>Пароли не совпадают</p> ';
-  }
-  if (status === 'nickname exists') {
-    document.querySelector('#incorrect-registration-data').innerHTML = '<p>Никнейм занят уже есть</p> ';
-  }
+  if (login, password, password2) {
+    if (status === 'user created!') {
+      document.querySelector('#incorrect-registration-data').innerHTML = `<p style={color:'white'}>Пользователь создан!</p> <a href='/login'> Сюда </a> `
+      setTimeout(() => {
+        window.location.replace('/login');
+      }, 1000);
+    }
+    if (status === 'user already exists') {
+      document.querySelector('#incorrect-registration-data').innerHTML = "<p style={color:'white'}>Такой пользователь существует!</p> <a href='/login'> Сюда </a> ";
+    }
+    if (status === 'check password') {
+      document.querySelector('#incorrect-registration-data').innerHTML = "<p style={{color:'white'}}>Пароли не совпадают</p> ";
+    }
+    if (status === 'nickname exists') {
+      document.querySelector('#incorrect-registration-data').innerHTML = "<p style={{color:'white'}}>Никнейм занят уже есть</p> ";
+    }
+  } else document.querySelector('#incorrect-registration-data').innerHTML = ' ЧТО ТО НЕ ТАК ДРУГ ';
 });
