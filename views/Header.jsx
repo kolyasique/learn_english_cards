@@ -6,13 +6,13 @@ module.exports = function Header() {
     <div id="header-all">
       <img src='/img/logo.png' id="logo"></img>
       <div id="header-menu">
-        <div><a href="/main" id="authorizationbutton">Главная</a></div>
+      <button><a href="/main" id="authorizationbutton">Главная</a></button>
         <div id="vert-line-menu1"> </div>
-        <div><a href="/"> Добавить карточку</a></div>
+        <button id="createFormButton"><a href="/creationform"> Добавить карточку</a></button>
         <div id="vert-line-menu2"> </div>
-        <div><a href="/"> Статистика </a></div>
+        <button><a href="/"> Статистика </a></button>
         <div id="vert-line-menu3"> </div>
-        <div><a href="/login/logout">Выйти</a></div>
+        <button><a href="/login/logout">Выйти</a></button>
       </div>
       <hr />
     </div>

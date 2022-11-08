@@ -20,14 +20,15 @@ loginRouter.post('/', async (req, res) => {
 
   if (loginProcess.status === 'true') {
     const userForSession = await User.findOne({ where: { login } });
+
     console.log(userForSession, ' Это userForSession');
+
     req.session.user = {
       id: userForSession.id,
       name: userForSession.login,
     };
     // res.json(loginProcess);
   }
-
   res.json(loginProcess);
 });
 
