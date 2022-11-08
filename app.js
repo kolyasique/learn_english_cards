@@ -16,6 +16,10 @@ const registrationRouter = require('./routes/auth/registrationRouter');
 const createCardRouter = require('./routes/createCardRouter');
 const mainRouter = require('./routers/mainRouter');
 
+
+const wordsRouter = require('./routers/wordsRouter');
+
+
 const app = express();
 
 const PORT = process.env.PORT ?? 3000;
@@ -32,5 +36,7 @@ app.use('/', mainRouter);
 app.use('/creationform', createCardRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
+app.use('/words', wordsRouter);
+
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });
