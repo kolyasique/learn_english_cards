@@ -13,9 +13,12 @@ const userSession = require('./middlewares/userSession');
 // const emptyRouter = require('./routes/emptyRouter');
 const loginRouter = require('./routes/auth/loginRouter');
 const registrationRouter = require('./routes/auth/registrationRouter');
-
+const createCardRouter = require('./routes/createCardRouter');
 const mainRouter = require('./routers/mainRouter');
+
+
 const wordsRouter = require('./routers/wordsRouter');
+
 
 const app = express();
 
@@ -30,8 +33,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(userSession);
 
 app.use('/', mainRouter);
+app.use('/creationform', createCardRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/words', wordsRouter);
+
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });

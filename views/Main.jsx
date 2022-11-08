@@ -4,8 +4,8 @@ const Layout = require('./Layout');
 module.exports = function Main({ arrThemes }) {
   return (
     <Layout>
-      <div className="themesContainer">
-
+      <div className="central-form-div">
+       <div className="themesContainer">
         <div className="section">
           <div className="row">
             {arrThemes.length
@@ -16,7 +16,9 @@ module.exports = function Main({ arrThemes }) {
               ))
               : <h3>Тем не существует!</h3>}
           </div>
+
         </div>
+      </div>
       </div>
     </Layout>
   );

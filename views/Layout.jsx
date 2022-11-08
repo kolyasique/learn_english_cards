@@ -12,6 +12,7 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="/css/style.css" />
         <script defer src="/js/auth/registrationStatusShow.js" />
         <script defer src="/js/auth/loginErrorShow.js" />
+        <script defer src="/js/showThemeForm.js" />
         <title>
           english
         </title>
