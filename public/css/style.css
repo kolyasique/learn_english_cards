@@ -416,6 +416,14 @@
   transform: rotateY(180deg);
   color: black;
 }
+
+.card-done{
+    margin: 20px;
+    position: relative;
+    width: 200px; height: 200px;
+    transition: 1s;
+    background-color: gray;
+}
 .wordTitle {
   color: black;
 }
@@ -459,4 +467,7 @@
 }
 .testLink:hover {
   color: black !important;
+}
+sdf {
+  color: rgb(24, 177, 24)
 }
