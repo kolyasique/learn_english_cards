@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const renderTemplate = require('../lib/renderTemplate');
-const Words = require('../views/Words');
+const Test = require('../views/Test');
 
 const { Theme, Word } = require('../db/models');
 
@@ -10,7 +10,7 @@ router.get('/:id', async (req, res) => {
     const theme = await Theme.findOne({ where: { id }, raw: true });
     const wordsRaw = await Word.findAll({ include: Theme, where: { theme_id: req.params.id } });
     const words = wordsRaw.map((el) => el.dataValues);
-    renderTemplate(Words, { theme, words }, res);
+    renderTemplate(Test, { theme, words }, res);
   } catch (error) {
     console.log(error);
   }

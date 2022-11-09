@@ -1,11 +1,18 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main({ titleTheme, words }) {
+module.exports = function Main({ theme, words }) {
   return (
     <Layout>
       <script defer src="/js/words.js" />
-      <h1>{titleTheme.title}</h1>
+      <h2 className="wordTitle">
+        Категория:
+        {' '}
+        {theme.title}
+      </h2>
+      <h3 className="wordTitle">
+        <a href={`/test/${theme.id}`} className="testLink">Пройти тест по выбранной категории</a>
+      </h3>
       <div className="wordsPage">
         {words.length
           ? words.map((word) => (
