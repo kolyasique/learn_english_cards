@@ -6,7 +6,9 @@ const { Theme, Word, Wordstatus } = require('../db/models');
 
 router.get('/:id', async (req, res) => {
   try {
-    const user_id = req.session.user.id
+
+    const userInSession = req.session.user;
+
     const { id } = req.params;
     const theme = await Theme.findOne({ where: { id }, raw: true });
     const wordsExtended = await Word.findAll({ include: Wordstatus })
@@ -15,9 +17,9 @@ router.get('/:id', async (req, res) => {
     const wordsRaw = wordsExtended.filter(el => 
       el.theme_id == req.params.id );
     const words = wordsRaw.map((el) => el.dataValues);
-    // console.log(words)
-    // const acceptableWords = 
-    renderTemplate(Words, { theme, words }, res);
+
+    renderTemplate(Words, { theme, words, userInSession }, res);
+
   } catch (error) {
     console.log(error);
   }
