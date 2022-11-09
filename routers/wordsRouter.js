@@ -7,7 +7,7 @@ const { Theme, Word, Wordstatus } = require('../db/models');
 router.get('/:id', async (req, res) => {
   try {
 
-    const userInSession = req.session.user;
+    const userInSession = req.session.user
 
     const { id } = req.params;
     const theme = await Theme.findOne({ where: { id }, raw: true });

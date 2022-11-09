@@ -1,7 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main({ theme, words, userInSession }) {
+
+module.exports = function Words({theme, words, userInSession}) {
+
   return (
     <Layout userInSession={userInSession}>
       <script defer src="/js/words.js" />
