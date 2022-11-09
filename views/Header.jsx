@@ -9,13 +9,13 @@ module.exports = function Header({ userInSession }) {
       {
     userInSession ? (
       <div id="header-menu">
-        <button><a href="/" id="authorizationbutton">Главная</a></button>
+        <a href="/" id="authorizationbutton" className='menu-button'>Главная</a>
 
-        <button><a href="/creationform">Добавить карточку</a></button>
+       <a href="/creationform" className='menu-button'>Добавить карточку</a>
 
-        <button><a href="/"> Статистика </a></button>
+       <a href="/" className='menu-button'> Статистика </a>
 
-        <button><a href="/login/logout">Выйти</a></button>
+        <a href="/login/logout" className='menu-button'>Выйти</a>
       </div>
     ) : (<div> Войдите или зарегистрируйтесь</div>)
 }

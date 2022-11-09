@@ -19,18 +19,21 @@ module.exports = function Words({theme, words, userInSession}) {
         {words.length
           ? words.map((word) => (
             <>
-            {word.Wordstatuses[0].status === false ?(
+            {(word.Wordstatuses.filter(el=>el.user_id === userInSession.id && el.status === true ).length !==0) ?(
+             <div className="card-done" id={`card-${word.id}`} key={word.id}>
+             <div>{word.word} </div>
+             <hr/>
+             <div>{word.translation}</div>
+             </div>
+            ):(
               <div className="card" id={`card-${word.id}`} key={word.id} >
               <div className="cardFace front">{word.word}</div>
                 <div className="cardFace back" >
-                  {word.translation}
+                  <div>{word.translation}</div>
                 <button id='buttonDone' data-word-id={word.id} data-rus-id={word.translation} data-eng-id={word.word} key={word.id}><a href={`/words/remember/${word.id}`}></a> Запомнил </button>
                 </div>
             </div>
-            ):(
-              <div className="card-done" id={`card-${word.id}`} key={word.id}>
-              {word.word}   это {word.translation}
-                </div>
+              
   
             )}
             </>

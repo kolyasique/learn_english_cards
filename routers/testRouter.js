@@ -11,6 +11,7 @@ router.get('/:id', async (req, res) => {
     const theme = await Theme.findOne({ where: { id }, raw: true });
     const wordsRaw = await Word.findAll({ include: Theme, where: { theme_id: req.params.id } });
     const words = wordsRaw.map((el) => el.dataValues);
+    console.log(words, 'это вордс++++++++++++++++++++++++')
     renderTemplate(Test, { theme, words, userInSession }, res);
   } catch (error) {
     console.log(error);
