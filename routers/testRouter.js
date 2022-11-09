@@ -9,7 +9,7 @@ router.get('/:id', async (req, res) => {
     const userInSession = req.session.user;
     const { id } = req.params;
     const theme = await Theme.findOne({ where: { id }, raw: true });
-    const wordsRaw = await Word.findAll({ include: Theme, where: { theme_id: req.params.id } });
+    const wordsRaw = await Word.findAll({ where: { theme_id: id } });
     const words = wordsRaw.map((el) => el.dataValues);
     console.log(words, 'это вордс++++++++++++++++++++++++')
     renderTemplate(Test, { theme, words, userInSession }, res);
