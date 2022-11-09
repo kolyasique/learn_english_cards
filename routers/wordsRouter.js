@@ -12,6 +12,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const theme = await Theme.findOne({ where: { id }, raw: true });
     const wordsExtended = await Word.findAll({ include: Wordstatus })
+    // const statusToShow = await Wordstatus.findOne({where:{user_id: userInSession.id, }})
     // console.log(wordsExtended)
     // const wordsRaw = await Word.findAll({ include: Wordstatus });
     const wordsRaw = wordsExtended.filter(el => 
@@ -29,7 +30,7 @@ router.put('/remember/:wid', async (req,res) =>{
   try {
     const user_id = req.session.user.id
     const { wid } = req.params
-    const wordStatusUpd = await Wordstatus.update({user_id, status:true}, {where:{ word_id: Number(wid), status:false}})
+    const wordStatusUpd = await Wordstatus.upsert({user_id, word_id: Number(wid), status:true})
     res.sendStatus(200)
   } catch (error) {
     res.sendStatus(300);
