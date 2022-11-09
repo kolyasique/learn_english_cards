@@ -5,12 +5,12 @@ const React = require('react');
 const Layout = require('./Layout');
 const CreateThemeForm = require('./CreateThemeForm');
 
-module.exports = function CreateCardForm({ themeList }) {
+module.exports = function CreateCardForm({ themeList, userInSession}) {
   return (
-    <Layout>
+    <Layout userInSession={userInSession}>
       <div className="central-form-div">
 
-        <form action="/creationform" method="POST" id="login-form">
+        <form action="/creationform" method="POST" id="creation-form">
           <div className="form-header">
             <h1>Create word</h1>
           </div>
@@ -42,20 +42,21 @@ module.exports = function CreateCardForm({ themeList }) {
               <input type="button" name="addButton" value="Добавить" />
               <input type="button" name="removeButton" value="Удалить" />
             </p> */}
-            <button type='click' id="opening-theme-form-btn">+</button>
-         
+            {/* <button type='click' id="opening-theme-form-btn">+</button>
+          */}
           </div>
           <div className="cut"></div>
 
-          <div className="input-container ic2">
+          {/* <div className="input-container ic2">
             <input id="lastname" className="input" name="translation" type="text" placeholder=" " />
             <div className="cut"></div>
             <label htmlFor="lastname" className="placeholder">Перевод слова</label>
-          </div>
+          </div> */}
+          
           <div className="cut"></div>
-          <div id="login-submit-btn">
+          {/* <div id="login-submit-btn"> */}
             <button className="submit" type="SUBMIT"> Добавить </button>
-          </div>
+          {/* </div> */}
           <div className="cut"></div>
           <div id="login-status"></div>
         </form>

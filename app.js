@@ -8,7 +8,7 @@ const morgan = require('morgan');
 const sessionConfig = require('./config/sessionConfig');
 const userSession = require('./middlewares/userSession');
 
-// const onlyForSession = require('./middlewares/onlyForSession');
+const onlyForSession = require('./middlewares/onlyForSession');
 
 // const emptyRouter = require('./routes/emptyRouter');
 const loginRouter = require('./routes/auth/loginRouter');
@@ -16,9 +16,8 @@ const registrationRouter = require('./routes/auth/registrationRouter');
 const createCardRouter = require('./routes/createCardRouter');
 const mainRouter = require('./routers/mainRouter');
 const testRouter = require('./routers/testRouter');
-
-
 const wordsRouter = require('./routers/wordsRouter');
+const authErrorRouter = require('./routes/auth/authError');
 
 
 const app = express();
@@ -33,12 +32,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(userSession);
 
-app.use('/', mainRouter);
-app.use('/creationform', createCardRouter);
+app.use('/autherror', authErrorRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
-app.use('/words', wordsRouter);
-app.use('/test', testRouter);
 
+
+
+app.use('/', onlyForSession, mainRouter);
+app.use('/creationform', onlyForSession, createCardRouter);
+app.use('/createthemeform', onlyForSession, createCardRouter);
+app.use('/words', onlyForSession, wordsRouter)
+app.use('/test', onlyForSession, testRouter);
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });

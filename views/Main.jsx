@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main({ arrThemes }) {
+module.exports = function Main({ arrThemes , userInSession}) {
   return (
-    <Layout>
+    <Layout userInSession={userInSession}>
       <div className="central-form-div">
        <div className="themesContainer">
         <div className="section">
