@@ -15,10 +15,8 @@ const loginRouter = require('./routes/auth/loginRouter');
 const registrationRouter = require('./routes/auth/registrationRouter');
 const createCardRouter = require('./routes/createCardRouter');
 const mainRouter = require('./routers/mainRouter');
-const testRouter = require('./routers/testRouter');
-const wordsRouter = require('./routers/wordsRouter');
 const authErrorRouter = require('./routes/auth/authError');
-
+const wordRouter = require('./routers/wordsRouter');
 
 const app = express();
 
@@ -36,12 +34,9 @@ app.use('/autherror', authErrorRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 
-
-
 app.use('/', onlyForSession, mainRouter);
 app.use('/creationform', onlyForSession, createCardRouter);
 app.use('/createthemeform', onlyForSession, createCardRouter);
-app.use('/words', onlyForSession, wordsRouter)
-app.use('/test', onlyForSession, testRouter);
+app.use('/words', onlyForSession, wordRouter)
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });
