@@ -33,7 +33,6 @@ module.exports = function Login() {
           <div id="login-status"></div>
         </form>
       </div>
-      <script type="module" src="node_modules/spin.js/spin.js"></script>
     </Layout>
   );
 };

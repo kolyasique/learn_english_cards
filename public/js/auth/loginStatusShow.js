@@ -11,7 +11,7 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
 
   // получаем с сервера
   const { status } = await loginErrorShow.json();
-  console.log(status);
+  console.log(status, '++++++++++++++++++++++++++++++++++');
   if (status === 'false') {
     document.querySelector('#login-status').innerHTML = "<p>Пользователь не зарегистрирован</p> <a href='/registration'> Регистрация </a>";
   }
@@ -20,6 +20,8 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
   }
   if (status === 'true') {
     document.querySelector('#login-status').innerHTML = '<p>Успешный вход</p>';
-    window.location.replace('/');
+    setTimeout(() => {
+      window.location.replace('/');
+    }, 1000);
   }
 });
