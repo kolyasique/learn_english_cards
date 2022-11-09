@@ -5,7 +5,7 @@ module.exports = {
       word: 'weather',
       translation: 'погода',
       theme_id: 1,
-      created_by: null,
+      created_by: 1,
       createdAt: new Date(),
       updatedAt: new Date(),
     },

@@ -38,11 +38,14 @@ wordsToRemember.addEventListener('click', async (event) => {
     console.log(response);
 
     if (response.status === 200) {
-      document.getElementById(`card-${wordId}`).classList.remove('card');
-      document.getElementById(`card-${wordId}`).classList.add('card-done');
-      document.getElementById(`card-${wordId}`).innerHTML = ` <div id='card-${wordId}'>
-      ${engId} это ${rusId}
-        </div>`;
+
+      document.getElementById(`card-${wordId}`).classList.remove('card')
+      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).innerHTML = ` 
+      <div >${engId} </div>
+      <hr/>
+      <div className='half'>${rusId}</div>
+      </>`
 
       // window.location.href = `/words/${id}`;
     }

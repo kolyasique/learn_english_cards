@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('./Layout');
 const Card = require('./Card');
 
-module.exports = function Main({ theme, words, userInSession }) {
+module.exports = function Test({ theme, words, userInSession }) {
   return (
     <Layout userInSession={userInSession}>
       <script defer src="/js/test.js" />
