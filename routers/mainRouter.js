@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const userInSession = req.session.user;
     const arrThemes = await Theme.findAll();
-    renderTemplate(Main, { arrThemes, userInSession}, res);
+    renderTemplate(Main, { arrThemes, userInSession }, res);
   } catch (error) {
     console.log(error);
   }
