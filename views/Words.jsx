@@ -21,9 +21,9 @@ module.exports = function Words({theme, words, userInSession}) {
             <>
             {(word.Wordstatuses.filter(el=>el.user_id === userInSession.id && el.status === true ).length !==0) ?(
              <div className="card-done" id={`card-${word.id}`} key={word.id}>
-             <div>{word.word} </div>
+             <div className='half'>{word.word} </div>
              <hr/>
-             <div>{word.translation}</div>
+             <div className='half'>{word.translation}</div>
              </div>
             ):(
               <div className="card" id={`card-${word.id}`} key={word.id} >
