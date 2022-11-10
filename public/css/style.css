@@ -533,9 +533,6 @@
 .testBtn:hover {
   color: black;
 }
-#a1 {
-  display: block !important;
-}
 .testLink {
   color: rgb(92, 91, 91) !important;
   text-decoration: none !important;

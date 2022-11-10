@@ -4,7 +4,7 @@ const random = require('../lib/random');
 module.exports = function Card({ word, words }) {
   const x = [random(), random(), random(), word.translation].sort();
   return (
-    <div id={`a${word.id}`} className="testDiv" style={{ display: 'none' }}>
+    <div className="testDiv" style={{ display: 'none' }}>
       <div className="test" />
       <div id={`w${word.id}`} className="testWord">{word.word}</div>
       <div className="testBtnDiv">

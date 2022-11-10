@@ -3,6 +3,7 @@ const divs = document.querySelectorAll('.testDiv');
 const tests = document.querySelectorAll('.test');
 
 let count = 0;
+divs[count].setAttribute('style', 'display: block !important');
 tests.forEach((el) => { el.innerHTML = `${count + 1} из ${divs.length}`; });
 
 btns.forEach((btn) => {
@@ -22,21 +23,25 @@ btns.forEach((btn) => {
       if (result.answerCorrect) {
         div.style.color = 'rgb(24, 177, 24)';
         divs[count].style.border = '2px solid rgb(24, 177, 24)';
+        btns.forEach((el) => { el.disabled = 'true'; });
         setTimeout(() => {
           divs[count].setAttribute('style', 'display: none !important');
           divs[count + 1].style.display = 'block';
           count += 1;
           tests.forEach((el) => { el.innerHTML = `${count + 1} из ${divs.length}`; });
+          btns.forEach((el) => { el.removeAttribute('disabled'); });
         }, 1200);
       }
       if (result.answerNotCorrect) {
         div.style.color = 'red';
         divs[count].style.border = '2px solid red';
+        btns.forEach((el) => { el.disabled = 'true'; });
         setTimeout(() => {
           divs[count].setAttribute('style', 'display: none !important');
           divs[count + 1].style.display = 'block';
           count += 1;
           tests.forEach((el) => { el.innerHTML = `${count + 1} из ${divs.length}`; });
+          btns.forEach((el) => { el.removeAttribute('disabled'); });
         }, 1200);
       }
     } catch (error) {
