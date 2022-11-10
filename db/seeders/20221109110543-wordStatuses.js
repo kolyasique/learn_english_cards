@@ -1,8 +1,9 @@
 /** @type {import('sequelize-cli').Migration} */
-const {Words} = require('../models')
+const { Words } = require('../models');
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Wordstatuses',[
+    await queryInterface.bulkInsert('Wordstatuses', [
       {
       user_id: 1,
       word_id: 1,
@@ -530,6 +531,7 @@ module.exports = {
   createdAt: new Date(),
   updatedAt: new Date(),
 },
+
     ], {});
   },
 
