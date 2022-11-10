@@ -40,6 +40,24 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          title: 'Животные',
+          created_by: null,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: 'Анатомия',
+          created_by: null,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: 'Цвета',
+          created_by: null,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {},
     );

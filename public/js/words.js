@@ -2,7 +2,6 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach((card) => {
   card.addEventListener('click', () => {
-    console.log(card.className);
     if (card.className !== 'card-done') {
       if (!card.style.transform) {
         card.style.transform = 'rotateY(180deg)';
