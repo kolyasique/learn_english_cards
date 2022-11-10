@@ -6,6 +6,7 @@ module.exports = {
       {
       user_id: 1,
       word_id: 1,
+      theme_id: 1,
       status: false,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -13,6 +14,7 @@ module.exports = {
   {
     user_id: 1,
     word_id: 2,
+    theme_id: 1,
     status: false,
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -20,6 +22,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 3,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -27,6 +30,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 4,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -34,6 +38,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 5,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -41,6 +46,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 6,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -48,6 +54,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 7,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -55,6 +62,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 8,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -62,6 +70,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 9,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -69,6 +78,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 10,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -76,6 +86,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 11,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -83,6 +94,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 12,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -90,6 +102,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 13,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -97,6 +110,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 14,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -104,6 +118,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 15,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -111,6 +126,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 16,
+  theme_id: 1,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -118,6 +134,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 17,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -125,6 +142,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 18,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -132,6 +150,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 19,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -139,6 +158,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 20,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -146,6 +166,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 21,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -153,6 +174,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 22,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -160,6 +182,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 23,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -167,6 +190,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 24,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -174,6 +198,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 25,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -181,6 +206,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 26,
+  theme_id: 2,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -188,6 +214,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 27,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -195,6 +222,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 28,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -202,6 +230,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 29,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -209,6 +238,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 30,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -216,6 +246,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 31,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -223,6 +254,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 32,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -230,6 +262,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 33,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -237,6 +270,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 34,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -244,6 +278,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 35,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -251,6 +286,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 36,
+  theme_id: 3,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -258,6 +294,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 37,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -265,6 +302,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 38,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -272,6 +310,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 39,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -279,6 +318,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 40,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -286,6 +326,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 41,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -293,6 +334,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 42,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -300,6 +342,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 43,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -307,6 +350,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 44,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -314,6 +358,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 45,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -321,6 +366,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 46,
+  theme_id: 4,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -328,6 +374,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 47,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -335,6 +382,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 48,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -342,6 +390,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 49,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -349,6 +398,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 50,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -356,6 +406,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 51,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -363,6 +414,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 52,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -370,6 +422,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 53,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -377,6 +430,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 54,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -384,6 +438,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 55,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -391,6 +446,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 56,
+  theme_id: 5,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -398,6 +454,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 57,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -405,6 +462,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 58,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -412,12 +470,14 @@ module.exports = {
 {
   user_id: 1,
   word_id: 59,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
 },{
   user_id: 1,
   word_id: 60,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -425,6 +485,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 61,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -432,6 +493,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 62,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -439,6 +501,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 63,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -446,6 +509,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 64,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -453,6 +517,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 65,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -460,6 +525,7 @@ module.exports = {
 {
   user_id: 1,
   word_id: 66,
+  theme_id: 6,
   status: false,
   createdAt: new Date(),
   updatedAt: new Date(),

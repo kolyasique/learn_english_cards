@@ -22,11 +22,12 @@ wordsToRemember.addEventListener('click', async (event) => {
     const { wordId } = event.target.dataset;
     const { engId } = event.target.dataset;
     const { rusId } = event.target.dataset;
+    const { themeId } = event.target.dataset;
     console.log(wordId, engId, rusId);
     const thisCard = document.getElementById(`card-${wordId}`);
     console.log(thisCard);
 
-    const response = await fetch(`/words/remember/${wordId}`, {
+    const response = await fetch(`/words/remember/${themeId}/${wordId}`, {
       method: 'put',
       headers: {
         'Content-type': 'application/json',
@@ -46,10 +47,7 @@ wordsToRemember.addEventListener('click', async (event) => {
       <hr/>
       <div className='half'>${rusId}</div>
       </>`
-      // window.location.href = `/words/${id}`;
     }
-    // thisCard.
-
-    // if(event.target.class === 'card' &&)
+  
   }
 });

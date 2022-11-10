@@ -23,6 +23,9 @@ module.exports = {
           key: 'id',
         },
       },
+      theme_id: {
+        type: Sequelize.INTEGER,
+      },
       status: {
         type: Sequelize.BOOLEAN,
       },

@@ -431,18 +431,18 @@
 }
 .cardFace.front {
   background: repeating-linear-gradient(to bottom,
-  #fdf0df 0px, #fdf0df 66px,
+  #15172b 0px, #15172b 66px,
    white 67px, white 133px,
-   #fdf0df 134px, #fdf0df 200px
+   #15172b 134px, #15172b 200px
    );
 }
 .cardFace.back {
   background: repeating-linear-gradient(to bottom,
    white 0px, white 66px,
-   #fdf0df 67px, #fdf0df 133px,
+   #15172b 67px, #15172b 133px,
    white 134px, white 200px);
   transform: rotateY(180deg);
-  color: black;
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
