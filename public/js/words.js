@@ -46,7 +46,6 @@ wordsToRemember.addEventListener('click', async (event) => {
       <hr/>
       <div className='half'>${rusId}</div>
       </>`
-
       // window.location.href = `/words/${id}`;
     }
     // thisCard.
