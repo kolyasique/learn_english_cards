@@ -3,22 +3,26 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Word extends Model {
+  class TestStatus extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Theme, User, Wordstatus, TestStatus }) {
-      Word.hasMany(Wordstatus, { foreignKey: 'word_id' });
-      Word.belongsTo(Theme, { foreignKey: 'theme_id' });
-      Word.belongsTo(User, { foreignKey: 'created_by' });
-      User.hasMany(TestStatus, { foreignKey: 'word_id' });
+    static associate({ User, Theme, Word }) {
+      TestStatus.belongsTo(User, { foreignKey: 'user_id' });
+      TestStatus.belongsTo(Theme, { foreignKey: 'theme_id' });
+      TestStatus.belongsTo(Word, { foreignKey: 'word_id' });
     }
   }
-  Word.init({
-    word: DataTypes.TEXT,
-    translation: DataTypes.TEXT,
+  TestStatus.init({
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
     theme_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -26,16 +30,17 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
-    created_by: {
+    word_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Users',
+        model: 'Words',
         key: 'id',
       },
     },
+    answer: DataTypes.BOOLEAN,
   }, {
     sequelize,
-    modelName: 'Word',
+    modelName: 'TestStatus',
   });
-  return Word;
+  return TestStatus;
 };
