@@ -14,8 +14,8 @@ module.exports = function CreateCardForm({ themeList, userInSession}) {
           <div className="form-header">
             <h1>Create word</h1>
           </div>
-          <div className="title">Create word</div>
-          <div className="subtitle">s perevodom</div>
+          {/* <div className="title">Create word</div>
+          <div className="subtitle">s perevodom</div> */}
 
           <div className="input-container ic1">
             <input id="firstname" className="input" name="word" type="text" placeholder=" " />
@@ -34,7 +34,7 @@ module.exports = function CreateCardForm({ themeList, userInSession}) {
             <select id="lastname" className="input-list" name="theme_id" size={`${themeList.length}`}>
 
               {themeList.map((el) => (
-                <option value={el.id}>{el.title}</option>))}
+                <option className='option' value={el.id}>{el.title}</option>))}
             </select>
             {/* <p><input type="text" name="textInput" placeholder="Введите текст" /></p>
             <p><input type="text" name="valueInput" placeholder="Введите значение" /></p>

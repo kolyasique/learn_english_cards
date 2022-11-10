@@ -16,7 +16,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       theme_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Themes',
+          key: 'id',
+        },
       },
       correct: {
         type: Sequelize.INTEGER

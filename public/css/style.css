@@ -9,6 +9,8 @@
   body{
     background-image: url(../img/fon2);
     background-size: 2100px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
   }
 
   /* HEADER */
@@ -40,7 +42,7 @@
   
   .menu-button {
      width: auto;
-    background: #efefef;
+    background: #082004;
     text-decoration: none;
     display: flex;
     padding: 10px;
@@ -88,6 +90,14 @@
     justify-content:center;
    
   }
+  .central-form-div2{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  }
   
   
   /* LOGIN - REG FORM */
@@ -126,10 +136,10 @@
 
 #creation-form{
     width: 400px;
-    height: 600px;
+    height: auto;
     padding: 15px;
     margin: 50px;
-    border-radius: 0px;
+    border-radius: 5px;
     background-color: #15172b;
     display: flex;
     flex-direction: column;
@@ -158,6 +168,7 @@
   
   .ic1 {
     margin-top: 40px;
+  
   }
   
   .ic2 {
@@ -172,7 +183,7 @@
   
   .input {
     background-color: #303245;
-    border-radius: 12px;
+    border-radius: 5px;
     border: 0;
     color: #eee;
     font-size: 18px;
@@ -189,8 +200,8 @@
     font-size: 18px;
     height: 100%;
     outline: 0;
-    padding: 4px 20px 0;
-    width: 90%;
+    padding: 4px 5px 5px;
+    width: 85%;
   }
   .cut {
     background-color: #15172b;
@@ -201,7 +212,7 @@
     top: -20px;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 76px;
+    width: 150px;
   }
   
   .cut-short {
@@ -238,9 +249,15 @@
   }
   
   .input:focus ~ .placeholder {
-    color: #dc2f55;
+    color: #ffd500;
   }
   
+  .option{
+    width: 100%;
+  }
+  .option:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+  }
   .submit {
     background-color: #08d;
     border-radius: 12px;
@@ -262,7 +279,7 @@
     margin-bottom: 0;
   }
   a, a:link, a:hover, a:visited {
-    color: #4c4c4c;
+    color: #ffffff;
     text-decoration: none;
   }
   a:hover {
@@ -353,6 +370,15 @@
     padding: 0;
   }
   
+  .themesContainer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap
+  }
   .section {
     width: 100%; 
     height: auto;
@@ -374,26 +400,33 @@
     width: 30%;
     height: 150px;
     border-radius: 3px;
-    background-color: rgba(44, 55, 44, 0.225);
+    /* background-color: rgba(44, 55, 44, 0.225); */
     box-shadow: 0 0 15px rgba(0,0,0,.8);
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .2s;
-  }
+    background: repeating-linear-gradient(to bottom,
+    rgb(247, 16, 0) 0px, rgb(247, 16, 0) 50px,
+    #141e90 51px, #141e90 100px,
+    rgb(255, 179, 0) 101px, rgb(255, 179, 0) 150px);  }
 
   .infText{
     position: relative;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
-    color: #160868;
+    color: #ffffff;
     transition: .2s;
   }
   
     .themeCard:hover{
     /* background: #4f8579; */
-    background-color: rgba(44, 55, 44, 0.664);
+    transition: .2s;
+    background: repeating-linear-gradient(to bottom,
+    rgb(255, 255, 255) 0px, rgb(255, 255, 255) 50px,
+    #161b50 51px, #161b50 100px,
+    rgb(255, 255, 255) 101px, rgb(255, 255, 255) 150px);
   }
   
   .themeCard:hover .infText{
@@ -402,6 +435,56 @@
     margin-bottom: 10px;
    
   } 
+.progress{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+}
+  .themeCard2{
+    width: 30%;
+    height: 200px;
+    border-radius: 3px;
+    background-color: #15172b;
+    box-shadow: 0 0 15px rgba(0,0,0,.8);
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: .2s;
+  }
+
+  .testScroll{
+    width: 90%;
+    height: 50px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #08d;
+    margin-bottom: 10px;
+  }
+  .testInfo{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,.8);
+    
+  }
+  .testInfo2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+  }
 
 .wordsPage {
   display: flex;
@@ -557,4 +640,61 @@
 }
 .able{
   display:flex;
+}
+@property --p{
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.pie {
+  --p:20;
+  --b:22px;
+  --c:darkred;
+  --w:150px;
+  
+  width:var(--w);
+  aspect-ratio:1;
+  position:relative;
+  display:inline-grid;
+  margin:5px;
+  place-content:center;
+  font-size:25px;
+  font-weight:bold;
+  font-family:sans-serif;
+}
+.pie:before,
+.pie:after {
+  content:"";
+  position:absolute;
+  border-radius:50%;
+}
+.pie:before {
+  inset:0;
+  background:
+    radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie:after {
+  inset:calc(50% - var(--b)/2);
+  background:var(--c);
+  transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+.animate {
+  animation:p 1s .5s both;
+}
+.no-round:before {
+  background-size:0 0,auto;
+}
+.no-round:after {
+  content:none;
+}
+@keyframes p {
+  from{--p:0}
+}
+
+body {
+  background:#ddd;
 }
