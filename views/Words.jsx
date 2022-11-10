@@ -1,9 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-
-module.exports = function Words({theme, words, userInSession}) {
-
+module.exports = function Words({ theme, words, userInSession }) {
   return (
     <Layout userInSession={userInSession}>
       <script defer src="/js/words.js" />
@@ -37,7 +35,7 @@ module.exports = function Words({theme, words, userInSession}) {
   
             )}
             </>
-           
+
           ))
           : <h3>Слов не существует!</h3>}
       </div>
