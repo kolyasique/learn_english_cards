@@ -3,23 +3,30 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Wordstatus extends Model {
+  class TestStatus extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Word, User }) {
-      Wordstatus.belongsTo(User, { foreignKey: 'user_id' });
-      Wordstatus.belongsTo(Word, { foreignKey: 'word_id' });
-    
+    static associate({ User, Theme, Word }) {
+      TestStatus.belongsTo(User, { foreignKey: 'user_id' });
+      TestStatus.belongsTo(Theme, { foreignKey: 'theme_id' });
+      TestStatus.belongsTo(Word, { foreignKey: 'word_id' });
     }
   }
-  Wordstatus.init({
+  TestStatus.init({
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Users',
+        key: 'id',
+      },
+    },
+    theme_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Themes',
         key: 'id',
       },
     },
@@ -30,11 +37,10 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
-    theme_id: DataTypes.INTEGER,
-    status: DataTypes.BOOLEAN,
+    answer: DataTypes.BOOLEAN,
   }, {
     sequelize,
-    modelName: 'Wordstatus',
+    modelName: 'TestStatus',
   });
-  return Wordstatus;
+  return TestStatus;
 };

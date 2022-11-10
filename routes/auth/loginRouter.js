@@ -27,7 +27,6 @@ loginRouter.post('/', async (req, res) => {
       id: userForSession.id,
       name: userForSession.login,
     };
-    // res.json(loginProcess);
   }
   res.json(loginProcess);
 });
