@@ -28,7 +28,7 @@ wordsToRemember.addEventListener('click', async (event) => {
     console.log(thisCard);
 
     const response = await fetch(`/words/remember/${themeId}/${wordId}`, {
-      method: 'put',
+      method: 'post',
       headers: {
         'Content-type': 'application/json',
       },
@@ -38,8 +38,8 @@ wordsToRemember.addEventListener('click', async (event) => {
     });
     console.log(response);
 
-    if (response.status === 200) {
-
+    const { status } = await response.json()
+    if (status === false) {
       document.getElementById(`card-${wordId}`).classList.remove('card')
       document.getElementById(`card-${wordId}`).classList.add('card-done')
       document.getElementById(`card-${wordId}`).innerHTML = ` 
@@ -48,6 +48,23 @@ wordsToRemember.addEventListener('click', async (event) => {
       <div className='half'>${rusId}</div>
       </>`
     }
-  
+    if (status === true) {
+    // const { html }  = await response.json()
+    // console.log(html)
+    document.getElementById(`card-${wordId}`).classList.remove('card')
+      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).innerHTML = ` 
+      <div >${engId} </div>
+      <hr/>
+      <div className='half'>${rusId}</div>
+      </>`
+
+      document.querySelector('.testHref').innerHTML = `
+      <h3>
+      <a href='/test/${themeId}'> Пройти тест! </a>
+      </h3>
+      `
+     
   }
+}
 });

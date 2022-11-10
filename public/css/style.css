@@ -551,3 +551,10 @@
   font-size: 20px;
   position: absolute;
 }
+
+.disabled{
+  display: none;
+}
+.able{
+  display:flex;
+}
