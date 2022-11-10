@@ -28,7 +28,7 @@ module.exports = function Words({ theme, words, userInSession }) {
               <div className="cardFace front">{word.word}</div>
                 <div className="cardFace back" >
                   <div>{word.translation}</div>
-                <button id='buttonDone' data-word-id={word.id} data-rus-id={word.translation} data-eng-id={word.word} key={word.id}><a href={`/words/remember/${word.id}`}></a> Запомнил </button>
+                <button id='buttonDone' data-word-id={word.id} data-rus-id={word.translation} data-eng-id={word.word} data-theme-id={theme.id} key={word.id}><a href={`/words/remember/${theme.id}/${word.id}`}></a> Запомнил </button>
                 </div>
             </div>
               

@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Word, User }) {
       Wordstatus.belongsTo(User, { foreignKey: 'user_id' });
       Wordstatus.belongsTo(Word, { foreignKey: 'word_id' });
+    
     }
   }
   Wordstatus.init({
@@ -29,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
+    theme_id: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN,
   }, {
     sequelize,

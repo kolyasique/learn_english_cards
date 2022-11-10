@@ -23,7 +23,7 @@ createCardRouter.post('/', async (req, res) => {
   console.log(word, translation, theme_id);
 
   const createWord = await Word.create({ word, translation, theme_id, created_by });
-  const createWordStatus = await Wordstatus.create({user_id: null, word_id: createWord.id, status:false})
+  const createWordStatus = await Wordstatus.create({user_id: created_by, word_id: createWord.id, theme_id, status:false})
 
   res.redirect('/');
 });

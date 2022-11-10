@@ -1,6 +1,7 @@
 const {
   Model,
 } = require('sequelize');
+const wordstatus = require('./wordstatus');
 
 module.exports = (sequelize, DataTypes) => {
   class Theme extends Model {
