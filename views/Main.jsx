@@ -10,9 +10,11 @@ module.exports = function Main({ arrThemes, userInSession }) {
             <div className="row">
               {arrThemes.length
                 ? arrThemes.map((theme) => (
-                  <div className="themeCard">
-                    <a className="infText" href={`/words/${theme.id}`}>{theme.title}</a>
-                  </div>
+                  // <div className="themeCard">
+                  <>
+                    <a className="themeCard" href={`/words/${theme.id}`}>{theme.title}</a>
+                    </>
+                  // </div>
                 ))
                 : <h3>Тем не существует!</h3>}
             </div>
