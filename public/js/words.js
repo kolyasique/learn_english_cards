@@ -37,32 +37,59 @@ wordsToRemember.addEventListener('click', async (event) => {
     });
     console.log(response);
 
-    const { status } = await response.json()
+    const { status } = await response.json();
     if (status === false) {
-      document.getElementById(`card-${wordId}`).classList.remove('card')
-      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).classList.remove('card');
+      document.getElementById(`card-${wordId}`).classList.add('card-done');
       document.getElementById(`card-${wordId}`).innerHTML = ` 
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      </>`
+      </>`;
     }
     if (status === true) {
     // const { html }  = await response.json()
     // console.log(html)
-    document.getElementById(`card-${wordId}`).classList.remove('card')
-      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).classList.remove('card');
+      document.getElementById(`card-${wordId}`).classList.add('card-done');
       document.getElementById(`card-${wordId}`).innerHTML = ` 
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      </>`
+      <button class="buttonDelete" id='buttonDelete' name="${wordId}"></button>
+      </>`;
+      document.getElementById('buttonDelete').classList.add('buttonDelete');
+      document.getElementById('buttonDelete').classList.add('buttonDelete2:before');
 
       document.querySelector('.testHref').innerHTML = `
       <h3 id='begginTestButton'>
       <a href='/test/${themeId}' id="testLink2">Пройти тест!</a>
     </h3>
-      `     
+      `
+    }
   }
-}
+});
+
+
+wordsToRemember.addEventListener('click', async (event) => {
+  try {
+    event.preventDefault();
+    console.log(event.target.id)
+    if (event.target.id === 'buttonDelete') {
+      const id = event.target.name;
+      console.log(id)
+      const response = await fetch(`/words/delete/${id}`, {
+        method: 'delete',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+      const result = await response.json();
+      if (result.deleted) {
+        const delDiv = document.getElementById(`card-${id}`);
+        delDiv.remove();
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });

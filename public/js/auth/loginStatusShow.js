@@ -1,4 +1,4 @@
-document.querySelector('#login-form').addEventListener('submit', async (event) => {
+document.querySelector('#login-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const login = event.target.login.value;
   const password = event.target.password.value;
