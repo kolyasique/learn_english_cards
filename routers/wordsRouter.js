@@ -40,7 +40,7 @@ router.post('/remember/:tid/:wid', async (req, res) => {
     const { wid } = req.params;
     const { tid } = req.params;
 
-    const testStatus = { status: false };
+    const testStatus = { status: 'short_notuser' };
     const wordStatusUpd = await Wordstatus.upsert({
       user_id, word_id: Number(wid), theme_id: Number(tid), status: true,
     });
@@ -49,9 +49,18 @@ router.post('/remember/:tid/:wid', async (req, res) => {
     const findAllWordsDone = await Wordstatus.findAll(
       { where: { user_id, theme_id: Number(tid), status: true } },
     );
-    if (findAllWordsInTheme.length === findAllWordsDone.length) {
-      testStatus.status = true;
+    const changedWord = await Word.findAll({where:{id:Number(wid), created_by: user_id}})
+  console.log(changedWord, '+++++++++ SLOVO IZMENENO')
+    if (findAllWordsInTheme.length !== findAllWordsDone.length && changedWord.length !== 0) {
+      testStatus.status = 'short_user';
     }
+    if (findAllWordsInTheme.length === findAllWordsDone.length && changedWord.length !== 0) {
+      testStatus.status = 'long_user';
+    }
+    if (findAllWordsInTheme.length === findAllWordsDone.length && changedWord.length === 0) {
+      testStatus.status = 'long_notuser';
+    }
+    console.log(testStatus)
     res.json(testStatus);
   } catch (error) {
     res.sendStatus(300);
