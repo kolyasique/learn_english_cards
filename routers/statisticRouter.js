@@ -16,7 +16,7 @@ statisticRouter.get('/', async (req, res) => {
     
   
     const arrWords = await Word.findAll({include: Wordstatus});
-    const arrWordStatus = await Wordstatus.findAll({where:{user_id: userInSession.id, status:true}})
+    const arrWordStatus = await Wordstatus.findAll({where:{user_id: userInSession.id, status: true}})
     const arrAllTest = await AllTest.findAll({where:{user_id: userInSession.id}})
 
     // let searchElement
@@ -32,7 +32,7 @@ statisticRouter.get('/', async (req, res) => {
     // console.log(arrAllTest)
     // console.log(arrThemes[1].Words[2].Wordstatuses.find(el => el.user_id == req.session.user.id));
     // console.log(arrThemes);
-
+console.log(arrWordStatus)
     renderTemplate(Statistics, {userInSession, arrThemes, arrWords, arrWordStatus, arrAllTest}, res);
   } catch (error) {
     console.log(error);

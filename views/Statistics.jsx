@@ -21,8 +21,8 @@ module.exports = function Statistics({ userInSession, arrThemes, arrWords, arrWo
                       {/* <div>{theme.Word[0].id}</div> */}
                       {/* arrThemes[1].Words[2].Wordstatuses.find(el => el.user_id == req.session.user.id) */}
                     <p className='infText'>{theme.title}</p>
-                    <progress id="file" value={theme.Words.reduce((acc,el)=> acc + el.Wordstatuses.filter(el=>el.user_id===userInSession.id).length, 0)} max={theme.Words.length}> {(arrWordStatus.length)/(arrWords.length)*100}% </progress>
-                   <p style={{color:'white'}}>{theme.Words.reduce((acc,el)=> acc + el.Wordstatuses.filter(el=>el.user_id===userInSession.id).length, 0)}/{theme.Words.length}</p>
+                    <progress id="file" value={theme.Words.reduce((acc,el)=> acc + el.Wordstatuses.filter(el=>el.user_id===userInSession.id && el.status === true).length, 0)} max={theme.Words.length}> {(arrWordStatus.length)/(arrWords.length)*100}% </progress>
+                   <p style={{color:'white'}}>{theme.Words.reduce((acc,el)=> acc + el.Wordstatuses.filter(el=>el.user_id===userInSession.id && el.status===true).length, 0)}/{theme.Words.length}</p>
                    <div className='testScroll'>
                     <p>{theme.AllTests.filter(el=>el.user_id === userInSession.id).map(el=>{
                         return(

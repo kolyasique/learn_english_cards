@@ -31,7 +31,7 @@ module.exports = function CreateCardForm({ themeList, userInSession}) {
 
           <div className="input-container ic3">
 
-            <select id="lastname" className="input-list" name="theme_id" size={`${themeList.length}`}>
+            <select id="lastname" className="input-list" name="theme_id" >
 
               {themeList.map((el) => (
                 <option className='option' value={el.id}>{el.title}</option>))}
