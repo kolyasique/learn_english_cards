@@ -21,12 +21,14 @@ router.get('/:id', async (req, res) => {
     const statusForLink = { status: false };
 
     const findAllWordsInTheme = await Word.findAll({ where: { theme_id: Number(id) } });
-    const findAllWordsDone = await Wordstatus.findAll({ where: { user_id:userInSession.id, theme_id: Number(id), status: true} });
+    const findAllWordsDone = await Wordstatus.findAll({ where: { user_id: userInSession.id, theme_id: Number(id), status: true } });
     if (findAllWordsInTheme.length <= findAllWordsDone.length) {
       statusForLink.status = true;
     }
-    console.log(statusForLink.status, '+_+_+_+_+_ CTATYC', findAllWordsInTheme.length, '-- ВСЕ СЛОВА В ТЕМЕ', findAllWordsDone.length, '---ВСЕ ОТВЕЧЕННЫЕ СЛОВА ЮЗЕРОМ В ТЕМЕ')
-    renderTemplate(Words, { theme, words, userInSession, statusForLink }, res);
+    console.log(statusForLink.status, '+_+_+_+_+_ CTATYC', findAllWordsInTheme.length, '-- ВСЕ СЛОВА В ТЕМЕ', findAllWordsDone.length, '---ВСЕ ОТВЕЧЕННЫЕ СЛОВА ЮЗЕРОМ В ТЕМЕ');
+    renderTemplate(Words, {
+      theme, words, userInSession, statusForLink,
+    }, res);
   } catch (error) {
     console.log(error);
   }
@@ -44,7 +46,9 @@ router.post('/remember/:tid/:wid', async (req, res) => {
     });
 
     const findAllWordsInTheme = await Word.findAll({ where: { theme_id: Number(tid) } });
-    const findAllWordsDone = await Wordstatus.findAll({ where: { user_id, theme_id: Number(tid), status: true } });
+    const findAllWordsDone = await Wordstatus.findAll(
+      { where: { user_id, theme_id: Number(tid), status: true } },
+    );
     if (findAllWordsInTheme.length === findAllWordsDone.length) {
       testStatus.status = true;
     }
@@ -53,4 +57,19 @@ router.post('/remember/:tid/:wid', async (req, res) => {
     res.sendStatus(300);
   }
 });
+
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    const { id } = req.body;
+    const deleted = await Word.destroy({ where: { id: Number(id) } });
+    if (deleted === 1) {
+      res.json({ deleted: 'true' });
+    } else {
+      res.json({ notDeleted: 'true' });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

@@ -12,28 +12,28 @@ module.exports = function Words({
         {' '}
         {theme.title}
       </h2>
-      <div className='testHref'>
-      {statusForLink.status === true ? (
-        <div className="wordTitle2">
-          <h3>
-            <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
-          </h3>
-        </div>
-      ) : (
-        <div>
-        <div className="wordTitle3 disabled">
-          <h3>
-          <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
-          </h3>
-        </div>
+      <div className="testHref">
+        {statusForLink.status === true ? (
+          <div className="wordTitle2">
+            <h3>
+              <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
+            </h3>
+          </div>
+        ) : (
+          <div>
+            <div className="wordTitle3 disabled">
+              <h3>
+                <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
+              </h3>
+            </div>
 
-        <div className="wordTitle4">
-          <h3>
-            <p className="testLink2">Для того, чтобы пройти тест, запомните все слова!</p>
-          </h3>
-        </div>
-        </div>
-      )}
+            <div className="wordTitle4">
+              <h3>
+                <p className="testLink2">Для того, чтобы пройти тест, запомните все слова!</p>
+              </h3>
+            </div>
+          </div>
+        )}
       </div>
       <div className="wordsPage">
         {words.length
@@ -47,6 +47,7 @@ module.exports = function Words({
                   </div>
                   <hr />
                   <div className="half">{word.translation}</div>
+                  <button className="buttonDelete" name={word.id} style={userInSession.id === word.created_by ? { display: 'block' } : { display: 'none' }}>Удалить</button>
                 </div>
               ) : (
                 <div className="card" id={`card-${word.id}`} key={word.id}>

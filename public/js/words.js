@@ -37,33 +37,55 @@ wordsToRemember.addEventListener('click', async (event) => {
     });
     console.log(response);
 
-    const { status } = await response.json()
+    const { status } = await response.json();
     if (status === false) {
-      document.getElementById(`card-${wordId}`).classList.remove('card')
-      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).classList.remove('card');
+      document.getElementById(`card-${wordId}`).classList.add('card-done');
       document.getElementById(`card-${wordId}`).innerHTML = ` 
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      </>`
+      <button className="buttonDelete" name={word.id}>Удалить</button>
+      </>`;
     }
     if (status === true) {
     // const { html }  = await response.json()
     // console.log(html)
-    document.getElementById(`card-${wordId}`).classList.remove('card')
-      document.getElementById(`card-${wordId}`).classList.add('card-done')
+      document.getElementById(`card-${wordId}`).classList.remove('card');
+      document.getElementById(`card-${wordId}`).classList.add('card-done');
       document.getElementById(`card-${wordId}`).innerHTML = ` 
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      </>`
+      <button className="buttonDelete" name={word.id}>Удалить</button>
+      </>`;
 
       document.querySelector('.testHref').innerHTML = `
       <h3>
       <a href='/test/${themeId}'> Пройти тест! </a>
       </h3>
-      `
-     
+      `;
+    }
   }
-}
+});
+
+wordsToRemember.addEventListener('click', async (event) => {
+  try {
+    event.preventDefault();
+    if (event.target.className === 'buttonDelete') {
+      const id = event.target.name;
+      const response = await fetch(`/words/delete/${id}`, {
+        method: 'delete',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+      const result = await response.json();
+      if (result.deleted) {
+        const delDiv = document.getElementById(`card-${id}`);
+        delDiv.remove();
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
