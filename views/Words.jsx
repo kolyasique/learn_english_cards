@@ -50,7 +50,7 @@ module.exports = function Words({
                   </div>
                   <hr />
                   <div className="half">{word.translation}</div>
-                  <button className="buttonDelete" name={word.id} style={userInSession.id === word.created_by ? { display: 'block' } : { display: 'none' }}>Удалить</button>
+                  <button className="buttonDelete" id='buttonDelete' name={word.id} style={userInSession.id === word.created_by ? { display: 'block' } : { display: 'none' }}></button>
                 </div>
               ) : (
                 <div className="card" id={`card-${word.id}`} key={word.id}>
@@ -65,7 +65,6 @@ module.exports = function Words({
                     </button>
                   </div>
                 </div>
-
               )}
             </>
 
