@@ -59,11 +59,10 @@ wordsToRemember.addEventListener('click', async (event) => {
       </>`
 
       document.querySelector('.testHref').innerHTML = `
-      <h3>
-      <a href='/test/${themeId}'> Пройти тест! </a>
-      </h3>
-      `
-     
+      <h3 id='begginTestButton'>
+      <a href='/test/${themeId}' id="testLink2">Пройти тест!</a>
+    </h3>
+      `     
   }
 }
 });

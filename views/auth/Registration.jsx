@@ -10,7 +10,9 @@ module.exports = function Registration() {
        <div className="central-form-div">
 
 <form action="/registration" method="POST" id="registration-form">
-  <h1>Регистрация</h1>
+<div className="form-header">
+            <h1>Регистрация</h1>
+          </div>
   <div className="title">privet english</div>
   <div className="subtitle">London is the capital of great britain</div>
 
@@ -36,7 +38,6 @@ module.exports = function Registration() {
   <button className="submit" id='submit-registration' type="SUBMIT"> Зарегистрироваться </button>
   </div>
 
-  <div className="cut"></div>
   <div id="incorrect-registration-data"> </div>
 
 </form>

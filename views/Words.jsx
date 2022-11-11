@@ -15,20 +15,20 @@ module.exports = function Words({
       <div className='testHref'>
       {statusForLink.status === true ? (
         <div className="wordTitle2">
-          <h3>
+          <h3 id='begginTestButton'>
             <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
           </h3>
         </div>
       ) : (
         <div>
         <div className="wordTitle3 disabled">
-          <h3>
-          <a href={`/test/${theme.id}`} className="testLink">Пройти тест!</a>
+          <h3 id='begginTestButton'>
+          <a href={`/test/${theme.id}`} className="testLink" style={{color:'white'}}>Пройти тест!</a>
           </h3>
         </div>
 
         <div className="wordTitle4">
-          <h3>
+          <h3 id='textTestBegin'>
             <p className="testLink2">Для того, чтобы пройти тест, запомните все слова!</p>
           </h3>
         </div>
