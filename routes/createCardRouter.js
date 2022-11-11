@@ -5,15 +5,16 @@ const rendertemplate = require('../lib/renderTemplate');
 // const loginCheck = require('../config/functions/loginCheck');
 
 const CreateCardForm = require('../views/CreateCardForm');
-const { Theme, Word, Wordstatus} = require('../db/models');
+const { Theme, Word, Wordstatus } = require('../db/models');
 
 const createCardRouter = express.Router();
 
 createCardRouter.get('/', async (req, res) => {
-    const userInSession = req.session.user
+  const userInSession = req.session.user;
+  console.log(userInSession);
   const themeList = await Theme.findAll();
 
-  rendertemplate(CreateCardForm, { themeList, userInSession}, res);
+  rendertemplate(CreateCardForm, { themeList, userInSession }, res);
 });
 
 createCardRouter.post('/', async (req, res) => {
@@ -22,8 +23,12 @@ createCardRouter.post('/', async (req, res) => {
 
   console.log(word, translation, theme_id);
 
-  const createWord = await Word.create({ word, translation, theme_id, created_by });
-  const createWordStatus = await Wordstatus.create({user_id: created_by, word_id: createWord.id, theme_id, status:false})
+  const createWord = await Word.create({
+    word, translation, theme_id, created_by,
+  });
+  const createWordStatus = await Wordstatus.create({
+    user_id: created_by, word_id: createWord.id, theme_id, status: false,
+  });
 
   res.redirect('/');
 });

@@ -12,6 +12,8 @@ module.exports = function Words({
         {' '}
         {theme.title}
       </h2>
+
+
       <div className='testHref'>
       {statusForLink.status === true ? (
         <div className="wordTitle2">
@@ -34,6 +36,7 @@ module.exports = function Words({
         </div>
         </div>
       )}
+
       </div>
       <div className="wordsPage">
         {words.length
@@ -47,6 +50,7 @@ module.exports = function Words({
                   </div>
                   <hr />
                   <div className="half">{word.translation}</div>
+                  <button className="buttonDelete" name={word.id} style={userInSession.id === word.created_by ? { display: 'block' } : { display: 'none' }}>Удалить</button>
                 </div>
               ) : (
                 <div className="card" id={`card-${word.id}`} key={word.id}>
