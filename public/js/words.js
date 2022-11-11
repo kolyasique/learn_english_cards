@@ -56,10 +56,9 @@ wordsToRemember.addEventListener('click', async (event) => {
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      <button class="buttonDelete" id='buttonDelete' name="${wordId}"></button>
+      <button class='buttonDelete' id='buttonDelete' name="${wordId}">х</button>
       </>`;
-      document.getElementById('buttonDelete').classList.add('buttonDelete');
-      document.getElementById('buttonDelete').classList.add('buttonDelete2:before');
+     document.getElementById('buttonDelete').classList.add('buttonDelete');
 
       document.querySelector('.testHref').innerHTML = `
       <h3 id='begginTestButton'>
