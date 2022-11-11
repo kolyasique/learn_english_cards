@@ -71,8 +71,8 @@
 
  .form-header{
     width: 100%;
-    background-color: rgba(23, 67, 24, 0.9); 
-    box-shadow: 0 0 10px rgba(0, 255, 8, 0.5); 
+    background-color: rgb(9, 45, 66); 
+    box-shadow: 0 0 10px rgba(0, 157, 255, 0.542); 
     margin-left: -15px;
     margin-right: -15px;
     margin-top: -15px;
@@ -99,30 +99,91 @@
     justify-content:center;
   }
   
-  
+  .central-form-div3{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
   /* LOGIN - REG FORM */
   #registration-form{
     width: 400px;
-    height: 500px;
+    height: auto;
     padding: 15px;
     margin: 50px;
-    border-radius: 0px;
+    border-radius: 5px;
     background-color: #15172b;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
   }
-  
+  #incorrect-registration-data{
+    margin-top: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  #r-reg{
+    color: white;
+  }
+  #r-button{
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    color: #eee;
+    cursor: pointer;
+    font-size: 10px;
+    height: 25px;
+    margin-top: 10px;
+    text-align: center;
+    width: 20%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
   #login-form{
     width: 400px;
-    height: 600px;
+    height: auto;
     padding: 15px;
     margin: 50px;
     border-radius: 0px;
     background-color: #15172b;
     display: flex;
+    border-radius: 5px;
     flex-direction: column;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    box-shadow: 0 0 10px rgba(236, 170, 170, 0.5); 
+}
+#login-status{
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#p-login{
+  color: white;
+}
+#p-button{
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+  font-size: 10px;
+  height: 25px;
+  margin-top: 10px;
+  text-align: center;
+  width: 20%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 #theme-form{
     width: 80%;
@@ -149,14 +210,14 @@
   .title {
     color: #eee;
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 300;
     margin-top: 30px;
   }
   
   .subtitle {
     color: #eee;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 200;
     margin-top: 10px;
   }
   
@@ -400,33 +461,30 @@
     width: 30%;
     height: 150px;
     border-radius: 3px;
-    /* background-color: rgba(44, 55, 44, 0.225); */
-    box-shadow: 0 0 15px rgba(0,0,0,.8);
+    background-color: #15172b;
+    box-shadow: 0 0 15px rgba(24, 91, 129, 0.8);
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .2s;
-    background: repeating-linear-gradient(to bottom,
-    rgb(247, 16, 0) 0px, rgb(247, 16, 0) 50px,
-    #141e90 51px, #141e90 100px,
-    rgb(255, 179, 0) 101px, rgb(255, 179, 0) 150px);  }
+    transition: .2s ease-in-out;
+     }
 
   .infText{
     position: relative;
     font-size: 24px;
     text-align: center;
     color: #ffffff;
-    transition: .2s;
+    transition: .2s ease-in-out;
   }
   
     .themeCard:hover{
     /* background: #4f8579; */
     transition: .2s;
     background: repeating-linear-gradient(to bottom,
-    rgb(255, 255, 255) 0px, rgb(255, 255, 255) 50px,
-    #161b50 51px, #161b50 100px,
-    rgb(255, 255, 255) 101px, rgb(255, 255, 255) 150px);
+    rgb(247, 16, 0) 0px, rgb(247, 16, 0) 50px,
+    #141e90 51px, #141e90 100px,
+    rgb(255, 179, 0) 101px, rgb(255, 179, 0) 150px);
   }
   
   .themeCard:hover .infText{
@@ -456,7 +514,109 @@
     justify-content: space-around;
     transition: .2s;
   }
+  .testResult{
+    width: 30%;
+    height: 200px;
+    border-radius: 3px;
+    background-color: #15172b;
+    box-shadow: 0 0 15px rgba(0,0,0,.8);
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .2s;
+  }
 
+  #begginTestButton{
+    text-align: center;
+    width: 100px;
+    background: #efefef;
+    text-decoration: none;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(10, 52, 19);
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* color: #4a0f68; */
+    transition: .2s ease-in-out;
+    text-align: center;
+    justify-content: space-around;
+    align-content: center;
+    align-self: center;
+  }
+
+  #begginTestButton:hover{
+    background: #19470c9b;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  #testIsOver{
+    color:white
+
+  }
+  .testLink:hover{
+    color: white;
+  }
+
+  .testLink2{
+    color: rgb(67, 67, 67);
+    font-weight: 300;
+  }
+  #testLink2{
+    color: rgb(67, 67, 67);
+    font-weight: 300;
+  }
+  #textTestBegin{
+    width: 100%;
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-around
+
+  }
+  .testHref{
+    width: 100%;
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-around
+  }
+  
+  #success{
+    color: rgb(99, 206, 255);
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  }
+  #countTrue{
+  color: white;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  }
+  #good{
+    margin-left: 5px;
+    color: green;
+    font-weight: 400;
+  }
+  #bad{
+    margin-left: 5px;
+    color: red;
+    font-weight: 400;
+  }
+  #countFalse{
+  color: white;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  }
   .testScroll{
     width: 90%;
     height: 50px;
@@ -591,37 +751,68 @@
 }
 .wordTitle {
   color: black;
+  text-align: center;
+  margin-top: 10px;
+  
+}
+.wordTitle2{
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .testDiv {
   margin: auto;
   width: 800px;
   height: 400px;
-  margin-top: 80px;
-  font-weight: bold;
-  border: 1px solid black;
+  margin-top: 40px;
+  font-weight: 300;
+  border-radius: 3px;
+  border: 1px solid rgb(167, 167, 167);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .testWord {
-  font-size: 40px;
-  background: white;
+  font-size: 48px;
+  font-weight: 600;
+  background-color: #eaeaea;;
+  color: rgb(9, 5, 30);
   text-align: center;
   height: 85%;
+  
   line-height: 370px;
 }
 .testBtnDiv {
   display: flex;
   background: white;
   height: 15%;
+  background: rgba(23, 67, 24, 0.9)
 }
 .testBtn {
-  font-size: 20px;
   width: 25%;
-  border: 1px solid #ddd;
-  background: white;
-  color: rgb(99, 97, 97);
-  font-weight: bold;
+  color: white;
+  background: #082004;
+  text-decoration: none;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(10, 52, 19);
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 300;
+  /* color: #4a0f68; */
+  transition: .2s ease-in-out;
+  text-align: center;
+  justify-content: space-around;
+  align-content: center;
+  align-self: center;
 }
 .testBtn:hover {
-  color: black;
+  background: #316b219b;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .testLink {
   color: rgb(92, 91, 91) !important;
@@ -633,6 +824,10 @@
 .test {
   font-size: 20px;
   position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: rgb(79, 79, 79);
+  
 }
 
 .disabled{
