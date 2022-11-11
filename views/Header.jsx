@@ -13,7 +13,7 @@ module.exports = function Header({ userInSession }) {
 
        <a href="/creationform" className='menu-button'>Добавить карточку</a>
 
-       <a href="/" className='menu-button'> Статистика </a>
+       <a href="/statistic" className='menu-button'> Статистика </a>
 
         <a href="/login/logout" className='menu-button'>Выйти</a>
       </div>

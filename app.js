@@ -17,6 +17,7 @@ const createCardRouter = require('./routes/createCardRouter');
 const mainRouter = require('./routers/mainRouter');
 const authErrorRouter = require('./routes/auth/authError');
 const wordRouter = require('./routers/wordsRouter');
+const statisticsRouter = require('./routers/statisticRouter')
 
 const testRouter = require('./routers/testRouter');
 const testResultRouter = require('./routers/testResultRouter');
@@ -43,7 +44,8 @@ app.use('/creationform', onlyForSession, createCardRouter);
 app.use('/createthemeform', onlyForSession, createCardRouter);
 app.use('/words', onlyForSession, wordRouter);
 app.use('/test', onlyForSession, testRouter);
-app.use('/test/:id', testResultRouter);
+app.use('/test/:id',onlyForSession, testResultRouter);
+app.use('/statistic', onlyForSession, statisticsRouter)
 
 
 app.listen(PORT, () => { console.log(`Server is up, PORT: ${PORT}`); });
