@@ -10,7 +10,9 @@ module.exports = function Login() {
       <div className="central-form-div">
 
         <form action="/login" method="POST" id="login-form">
-          <h1>Войти</h1>
+        <div className="form-header">
+            <h1>Войти</h1>
+          </div>
           <div className="title">privet english</div>
           <div className="subtitle">London is the capital of great britain</div>
 
@@ -27,9 +29,8 @@ module.exports = function Login() {
           </div>
 
             <div id='login-submit-btn'>
-          <button className="submit" type="SUBMIT"> Апдейт </button>
+          <button className="submit" type="SUBMIT"> Войти </button>
             </div>
-          <div className="cut"></div>
           <div id="login-status"></div>
         </form>
       </div>
