@@ -45,7 +45,6 @@ wordsToRemember.addEventListener('click', async (event) => {
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      <button className="buttonDelete" name={word.id}>Удалить</button>
       </>`;
     }
     if (status === true) {
@@ -57,14 +56,16 @@ wordsToRemember.addEventListener('click', async (event) => {
       <div >${engId} </div>
       <hr/>
       <div className='half'>${rusId}</div>
-      <button className="buttonDelete" name={word.id}>Удалить</button>
+      <button class="buttonDelete" id='buttonDelete' name="${wordId}"></button>
       </>`;
+      document.getElementById('buttonDelete').classList.add('buttonDelete');
+      document.getElementById('buttonDelete').classList.add('buttonDelete2:before');
 
       document.querySelector('.testHref').innerHTML = `
       <h3 id='begginTestButton'>
       <a href='/test/${themeId}' id="testLink2">Пройти тест!</a>
     </h3>
-      `     
+      `
     }
   }
 });
@@ -73,8 +74,10 @@ wordsToRemember.addEventListener('click', async (event) => {
 wordsToRemember.addEventListener('click', async (event) => {
   try {
     event.preventDefault();
-    if (event.target.className === 'buttonDelete') {
+    console.log(event.target.id)
+    if (event.target.id === 'buttonDelete') {
       const id = event.target.name;
+      console.log(id)
       const response = await fetch(`/words/delete/${id}`, {
         method: 'delete',
         headers: { 'Content-type': 'application/json' },

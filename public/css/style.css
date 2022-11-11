@@ -16,7 +16,7 @@ background: radial-gradient(circle, rgba(251,255,250,1) 0%, rgba(233,238,230,0.6
     background: #4f8579;
     width:100%;
     color: azure;
-    padding: 0;
+    padding: 10px;
     display: flex;
     height: 120px;
     flex-direction: row;
@@ -907,3 +907,72 @@ background: radial-gradient(circle, rgba(251,255,250,1) 0%, rgba(233,238,230,0.6
 /* body {
   background:#ddd;
 } */
+.buttonDelete{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #F6F6F6;
+}
+.buttonDelete:before,
+.buttonDelete:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  width: 15px;
+  height: 4px;
+  background: rgb(87, 87, 87);
+}
+.buttonDelete:before {
+  transform: rotate(45deg);
+}
+.buttonDelete:after {
+  transform: rotate(-45deg);
+}
+.buttonDelete:before:hover {
+  
+  background: rgb(255, 0, 0);
+}
+.buttonDelete:after:hover {
+  background: rgb(255, 0, 0);
+}
+
+.buttonDelete2{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #F6F6F6;
+}
+.buttonDelete2:before,
+.buttonDelete2:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  width: 15px;
+  height: 4px;
+  background: rgb(87, 87, 87);
+}
+.buttonDelete2:before {
+  transform: rotate(45deg);
+}
+.buttonDelete2:after {
+  transform: rotate(-45deg);
+}
+.buttonDelete2:before:hover {
+  
+  background: rgb(255, 0, 0);
+}
+#buttonDelete2:after:hover {
+  background: rgb(255, 0, 0);
+}
